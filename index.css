@@ -1,0 +1,26 @@
+body {
+  background: blue;
+  color: white;
+  font: 20pt normal arial;
+}
+body div {
+  text-align: center;
+  font-family: monospace;
+}
+
+div#area1 {
+  background: red;
+  border: 6px ridge orange;
+  color: white;
+  width: 1235px;
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+}
+h1.soma {
+  font-family: monospace;
+  color:yellow;
+}
+div#res2 {
+  
+}

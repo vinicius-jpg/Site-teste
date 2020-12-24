@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="index.js"></script>
+    <title>javscript dom</title>
+  </head>
+    <body>
+          <h1>Inicio de dom</h1>
+          <p>resultado</p>
+          <p>usando o <strong>DOM</strong> em Javascript</p>
+          <div id="msg">clique aqui</div>
+          <p><div class="msg2">outro clique</div></p></div>
+          <center>
+          <div id="area1">
+              interaja aqui!
+          </div>
+          </center>
+          <script>
+            var p1 = window.document.getElementsByTagName('p')[1]
+              window.document.write('no segundo paragrafo esta escrito assim: ' + p1.innerHTML)
+
+            var id = window.document.querySelector('div#msg')
+              id.style.color = 'yellow'
+              id.style.background = 'black'
+
+            var id2 = window.document.querySelector('div.msg2')
+              id2.style.color = 'yellow'
+              //evento js
+              var a = window.document.getElementById('area1')
+              a.addEventListener('click',clicar)
+              a.addEventListener('mouseover',entrar)
+              a.addEventListener('mouseout',sair)
+
+              function clicar() {
+                  a.innerText = 'clicou'
+                  a.style.background = 'green'
+              }
+              function entrar() {
+                a.innerText = 'entrou'
+              }
+              function sair(){
+                a.innerText = 'saiu'
+                a.style.background = 'red'
+              }
+
+              function somar() {
+                var tn1 = window.document.getElementById('txtn1')
+                var tn2 = window.document.getElementById('txtn2')
+                var res = window.document.getElementById('res')
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                var s = n1 + n2
+                res.innerText = `A soma entre ${n1} e ${n2} e ${s}`
+              }
+          </script>
+          <h1 class="soma">Soma de valores</h1>
+          <input type="number" name="txtn1" id="txtn1"> +
+          <input type="number" name="txtn2" id="txtn2">
+          <input type="button" value="Somar" onclick="somar()">
+          <div id="res">Resultado</div>
+
+          <h1>Sistema de multas</h1>
+            velocidade Do carro:<input type="number" name="txtvel" id="txtvel">Km/h
+                                <input type="button" value="Verificar" onclick="Calcular()">
+
+        <script>
+            function Calcular() {
+              var txtvel = window.document.getElementById('txtvel')
+              var res = window.document.getElementById('res2')
+              var vel = Number(txtvel.value)
+              res.innerHTML = `Sua velocidade e de ${vel}Km/h`
+              if (vel > 60) {
+                res.innerText += ',Voce sera multado'
+                res.innerHTML += ',sande com cinto de seguranca'
+              }
+            }
+        </script>
+        <div id="res2">Resultado</div>
+    </body>
+</html>
